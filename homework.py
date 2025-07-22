@@ -6,9 +6,10 @@ def test_dark_theme_by_time():
     Протестируйте правильность переключения темной темы на сайте в зависимости от времени
     """
     current_time = time(hour=23)
+    print(current_time)
     # TODO переключите темную тему в зависимости от времени суток (с 22 до 6 часов утра - ночь)
 
-    is_dark_theme = None
+    is_dark_theme = False if current_time >= time(hour=22) <= time(hour=6) else True
     assert is_dark_theme is True
 
 
@@ -25,7 +26,8 @@ def test_dark_theme_by_time_and_user_choice():
     # TODO переключите темную тему в зависимости от времени суток,
     #  но учтите что темная тема может быть включена вручную
 
-    is_dark_theme = None
+    is_dark_theme = (False if current_time >= time(hour=22) <= time(hour=6) else True) \
+        if dark_theme_enabled_by_user is None else dark_theme_enabled_by_user
     assert is_dark_theme is True
 
 
@@ -43,6 +45,7 @@ def test_find_suitable_user():
 
     # TODO найдите пользователя с именем "Olga"
     suitable_users = None
+
     assert suitable_users == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
