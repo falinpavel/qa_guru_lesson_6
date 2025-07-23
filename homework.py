@@ -44,6 +44,9 @@ def test_find_suitable_user():
 
     # TODO найдите пользователя с именем "Olga"
     suitable_users = None
+    # suitable_users = [user for user in users if user["name"] == "Olga"]
+    # suitable_users = dict(*suitable_users)
+    print(suitable_users)
     for user in users:
         if user["name"] == "Olga":
             suitable_users = user
