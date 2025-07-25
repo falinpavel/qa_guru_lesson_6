@@ -74,10 +74,6 @@ def my_function(function, *args, **kwargs):
     function_name = function.__name__.replace('_', ' ').title()
     all_values = list()
     all_values.extend(args) if args else all_values.extend(kwargs.values())
-    # if args:
-    #     all_values.extend(args)
-    # if kwargs:
-    #     all_values.extend(kwargs.values())
     args_str = ", ".join(str(value) for value in all_values)
     return f"{function_name} [{args_str}]"
 
