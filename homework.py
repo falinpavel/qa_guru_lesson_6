@@ -72,8 +72,8 @@ def test_find_suitable_user():
 # "Open Browser [Chrome]"
 def my_function(function, *args, **kwargs):
     function_name = function.__name__.replace('_', ' ').title()
-    all_values = list()
-    all_values.extend(args) if args else all_values.extend(kwargs.values())
+    all_values = list(kwargs.values() if kwargs else args)
+    # all_values.extend(args) if args else all_values.extend(kwargs.values())
     args_str = ", ".join(str(value) for value in all_values)
     return f"{function_name} [{args_str}]"
 
