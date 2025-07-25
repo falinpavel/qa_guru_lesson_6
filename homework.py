@@ -85,7 +85,6 @@ def test_readable_function():
 
 
 def open_browser(browser_name):
-    # вот тут вызываем реализованную функцию, которая вернет нам читабельное имя самой функции и аргументов
     actual_result = my_function(open_browser, browser_name=browser_name)
     assert actual_result == "Open Browser [Chrome]"
 
